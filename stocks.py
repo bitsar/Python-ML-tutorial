@@ -1,5 +1,8 @@
 import pandas as pd
-import quandl
+import quandl, math
+import numpy
+from sklearn import preprocessing, cross_validation, svm
+from sklearn.linear_model import LinearRegression
 
 # Data set initialisation
 dataFrame = quandl.get("WIKI/GOOGL")
