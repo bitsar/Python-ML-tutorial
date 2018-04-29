@@ -2,6 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9036922-7205-49a7-bca5-39580d0af3fa" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas-1.6.0.dist-info/DESCRIPTION.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas-1.6.0.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas-1.6.0.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas-1.6.0.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas-1.6.0.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas-1.6.0.dist-info/metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas-1.6.0.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas/categorical_imputer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas/cross_validation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas/dataframe_mapper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas/features_generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn_pandas/pipeline.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/stocks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn-0.0-py3.6.egg-info/PKG-INFO" beforeDir="false" />
@@ -24,8 +37,8 @@
       <file leaf-file-name="stocks.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stocks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="476">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -274,8 +287,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stocks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="476">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
