@@ -1,7 +1,10 @@
-import pandas
-import quandl, math
+import math
 import numpy
-from sklearn import preprocessing, model_selection, svm
+import quandl
+import datetime
+import matplotlib.pyplot
+from matplotlib import style
+from sklearn import preprocessing, model_selection
 from sklearn.linear_model import LinearRegression
 
 import variables as vars
@@ -33,6 +36,7 @@ dataFrame.dropna(inplace=True)
 # Define numpy arrary of entire dataframe (except the label column)
 X = numpy.array(dataFrame.drop(['label'], 1))
 X = preprocessing.scale(X)
+X_lately = X[-forecastIgnore:]
 # X = X[:-forecastIgnore]
 dataFrame.dropna(inplace=True)
 
@@ -50,4 +54,6 @@ classifier.fit(X_train, Y_train)
 confidence = classifier.score(X_test, Y_test)
 print('\nKernel: Linear Regression ' + '\nConfidence: ', confidence)
 
-
+# Forecasting
+forecastSet = classifier.predict(X_lately)
+print(forecastSet, confidence, forecastIgnore)
