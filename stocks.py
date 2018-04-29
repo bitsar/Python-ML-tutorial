@@ -40,9 +40,22 @@ dataFrame.dropna(inplace=True)
 
 # Standard definitions
 # Features
+# Define numpy arrary of entire dataframe (except the label column)
 X = numpy.array(dataFrame.drop(['label'], 1))
+X = preprocessing.scale(X)
 
 # Labels
+# Define the label column of the dataframe
 Y = numpy.array(dataFrame['label'])
 
+# Training
+X_train, X_test, Y_train, Y_test = model_selection.train_test_split(X, Y, test_size=0.2)
 
+# Define classifiers (support vector regression)
+# n_jobs=-1 : use all threads
+classifier = LinearRegression(n_jobs=-1)
+classifier.fit(X_train, Y_train)
+
+# Testing
+confidence = classifier.score(X_test, Y_test)
+print(confidence)
