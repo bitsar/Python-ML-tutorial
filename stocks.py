@@ -7,7 +7,11 @@ from matplotlib import style
 from sklearn import preprocessing, model_selection
 from sklearn.linear_model import LinearRegression
 
+# Local imports
 import variables as vars
+
+# Style set
+style.use('ggplot')
 
 # Data set initialisation
 dataFrame = quandl.get(vars.stock)
@@ -15,6 +19,7 @@ dataFrame = dataFrame[[vars.openPrice, vars.highPrice, vars.lowPrice, vars.close
 dataFrame['High-Low-Percent'] = (dataFrame[vars.highPrice] - dataFrame[vars.lowPrice]) / dataFrame[vars.lowPrice] * 100.0
 dataFrame['Percent-Change'] = (dataFrame[vars.closePrice] - dataFrame[vars.openPrice]) / dataFrame[vars.openPrice] * 100.0
 dataFrame = dataFrame[[vars.closePrice, vars.highPrice, 'Percent-Change', vars.volumePrice]]
+dataFrame['Forecast'] = numpy.nan
 print(dataFrame.head())
 
 # Learning Components
@@ -57,3 +62,19 @@ print('\nKernel: Linear Regression ' + '\nConfidence: ', confidence)
 # Forecasting
 forecastSet = classifier.predict(X_lately)
 print(forecastSet, confidence, forecastIgnore)
+
+# Slicing and Dicing
+lastDate = dataFrame.iloc[-1].name
+lastUnix = lastDate.timestamp()
+oneDay = vars.oneDay
+nextUnix = lastUnix + oneDay
+
+# Iterate through the forecast set
+# Set daily values into dataframe (making all value != NaN)
+for i in forecastSet:
+    nextDate = datetime.datetime.fromtimestamp(nextUnix)
+    nextUnix += vars.oneDay
+    dataFrame.loc[nextDate] = [numpy.nan for _ in range (len(dataFrame.columns)-1)] + [i]
+
+# Graph output
+dataFrame[vars.closePrice].plot()

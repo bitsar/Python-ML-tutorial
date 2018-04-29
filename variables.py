@@ -2,6 +2,8 @@
 # Vars
 predict = 0.1
 NaN = -99999
+oneDay = 86400
+
 # Switches
 stock = "WIKI/GOOGL"
 openPrice = 'Adj. Open'
