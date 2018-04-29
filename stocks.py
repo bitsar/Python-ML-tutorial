@@ -13,7 +13,7 @@ import variables as vars
 # Style set
 style.use('ggplot')
 
-# Data set initialisation
+# DataFrame initialisations
 dataFrame = quandl.get(vars.stock)
 dataFrame = dataFrame[[vars.openPrice, vars.highPrice, vars.lowPrice, vars.closePrice, vars.volumePrice]]
 dataFrame['High-Low-Percent'] = (dataFrame[vars.highPrice] - dataFrame[vars.lowPrice]) / dataFrame[vars.lowPrice] * 100.0
@@ -78,3 +78,8 @@ for i in forecastSet:
 
 # Graph output
 dataFrame[vars.closePrice].plot()
+# dataFrame['Forecast'].plot()
+matplotlib.pyplot.legend(loc=4)
+matplotlib.pyplot.xlabel('Date')
+matplotlib.pyplot.ylabel('Price')
+matplotlib.pyplot.show()
