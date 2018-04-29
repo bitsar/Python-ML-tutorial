@@ -51,11 +51,18 @@ Y = numpy.array(dataFrame['label'])
 # Training
 X_train, X_test, Y_train, Y_test = model_selection.train_test_split(X, Y, test_size=0.2)
 
-# Define classifiers (support vector regression)
+# Define classifiers
 # n_jobs=-1 : use all threads
-classifier = LinearRegression(n_jobs=-1)
-classifier.fit(X_train, Y_train)
+# classifier = LinearRegression(n_jobs=-1)
+# classifier.fit(X_train, Y_train)
+
+# Kernel transformation algorithms
+for kernel_algo in ['linear', 'poly', 'rbf', 'sigmoid']:
+    classifier = svm.SVR(kernel=kernel_algo)
+    classifier.fit(X_train, Y_train)
+    confidence = classifier.score(X_test, Y_test)
+    print('Kernel = ' + kernel_algo, confidence)
 
 # Testing
-confidence = classifier.score(X_test, Y_test)
-print(confidence)
+# confidence = classifier.score(X_test, Y_test)
+# print(confidence)
