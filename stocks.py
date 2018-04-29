@@ -43,6 +43,8 @@ dataFrame.dropna(inplace=True)
 # Define numpy arrary of entire dataframe (except the label column)
 X = numpy.array(dataFrame.drop(['label'], 1))
 X = preprocessing.scale(X)
+# X = X[:-forecastIgnore]
+dataFrame.dropna(inplace=True)
 
 # Labels
 # Define the label column of the dataframe
@@ -51,9 +53,11 @@ Y = numpy.array(dataFrame['label'])
 # Training
 X_train, X_test, Y_train, Y_test = model_selection.train_test_split(X, Y, test_size=0.2)
 
-# Kernel transformation algorithms
-for kernel_algo in ['linear', 'poly', 'rbf', 'sigmoid']:
-    classifier = svm.SVR(kernel=kernel_algo)
-    classifier.fit(X_train, Y_train)
-    confidence = classifier.score(X_test, Y_test)
-    print('Kernel = ' + kernel_algo, confidence)
+# Classifiers
+# n_jobs=-1 (use all threads)
+classifier = LinearRegression(n_jobs=-1)
+classifier.fit(X_train, Y_train)
+confidence = classifier.score(X_test, Y_test)
+print('\nKernel: Linear Regression ' + '\nConfidence: ', confidence)
+
+
