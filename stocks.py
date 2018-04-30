@@ -19,7 +19,6 @@ dataFrame = dataFrame[[vars.openPrice, vars.highPrice, vars.lowPrice, vars.close
 dataFrame['High-Low-Percent'] = (dataFrame[vars.highPrice] - dataFrame[vars.lowPrice]) / dataFrame[vars.lowPrice] * 100.0
 dataFrame['Percent-Change'] = (dataFrame[vars.closePrice] - dataFrame[vars.openPrice]) / dataFrame[vars.openPrice] * 100.0
 dataFrame = dataFrame[[vars.closePrice, vars.highPrice, 'Percent-Change', vars.volumePrice]]
-dataFrame['Forecast'] = numpy.nan
 print(dataFrame.head())
 
 # Learning Components
@@ -61,6 +60,7 @@ print('\nKernel: Linear Regression ' + '\nConfidence: ', confidence)
 
 # Forecasting
 forecastSet = classifier.predict(X_lately)
+dataFrame['Forecast'] = numpy.nan
 print(forecastSet, confidence, forecastIgnore)
 
 # Slicing and Dicing
@@ -78,7 +78,7 @@ for i in forecastSet:
 
 # Graph output
 dataFrame[vars.closePrice].plot()
-# dataFrame['Forecast'].plot()
+dataFrame['Forecast'].plot()
 matplotlib.pyplot.legend(loc=4)
 matplotlib.pyplot.xlabel('Date')
 matplotlib.pyplot.ylabel('Price')
