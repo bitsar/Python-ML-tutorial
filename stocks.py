@@ -34,7 +34,7 @@ forecastIgnore = int(math.ceil(vars.predict * len(dataFrame)))
 dataFrame['label'] = dataFrame[forecastColumn].shift(-forecastIgnore)
 
 # Drop NaN data
-dataFrame.dropna(inplace=True)
+# dataFrame.dropna(inplace=True)
 
 # Standard definitions
 # Features
@@ -42,7 +42,7 @@ dataFrame.dropna(inplace=True)
 X = numpy.array(dataFrame.drop(['label'], 1))
 X = preprocessing.scale(X)
 X_lately = X[-forecastIgnore:]
-# X = X[:-forecastIgnore]
+X = X[:-forecastIgnore]
 dataFrame.dropna(inplace=True)
 
 # Labels
