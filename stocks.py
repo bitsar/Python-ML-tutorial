@@ -3,6 +3,7 @@ import numpy
 import quandl
 import datetime
 import matplotlib.pyplot
+import pickle
 from matplotlib import style
 from sklearn import preprocessing, model_selection
 from sklearn.linear_model import LinearRegression
@@ -48,20 +49,34 @@ dataFrame.dropna(inplace=True)
 # Define the label column of the dataframe
 Y = numpy.array(dataFrame['label'])
 
-# Training
+# Training Components
+# [Classifiers, Forecasting and Slicing]
 X_train, X_test, Y_train, Y_test = model_selection.train_test_split(X, Y, test_size=0.2)
 
 # Classifiers
 # n_jobs=-1 (use all threads)
-classifier = LinearRegression(n_jobs=-1)
-classifier.fit(X_train, Y_train)
-confidence = classifier.score(X_test, Y_test)
-print('\nKernel: Linear Regression ' + '\nConfidence: ', confidence)
+if vars.classifierSwitch == 'on':
+    classifier = LinearRegression(n_jobs=-1)
+    classifier.fit(X_train, Y_train)
+    confidence = classifier.score(X_test, Y_test)
+    print('\nKernel: Linear Regression ' + '\nConfidence: ', confidence)
+
+    # Use pickle module to save classifier as Python object.
+    # Use file_handler to (w)rite (b)inary to *.pickle object (as file)
+    with open('linearRegression.pickle', 'wb') as pickle_out:
+        pickle.dump(classifier, pickle_out)
+
+# Rehydrate pickle
+# Use file_handler to (r)ead (b)inary *.pickle and load back into classifier (training)
+pickle_in = open('linearRegression.pickle', 'rb')
+classifier = pickle.load(pickle_in)
+
 
 # Forecasting
 forecastSet = classifier.predict(X_lately)
 dataFrame['Forecast'] = numpy.nan
-print(forecastSet, confidence, forecastIgnore)
+if vars.classifierSwitch == 'on':
+    print(forecastSet, confidence, forecastIgnore)
 
 # Slicing and Dicing
 lastDate = dataFrame.iloc[-1].name
@@ -83,3 +98,4 @@ matplotlib.pyplot.legend(loc=4)
 matplotlib.pyplot.xlabel('Date')
 matplotlib.pyplot.ylabel('Price')
 matplotlib.pyplot.show()
+
