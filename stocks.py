@@ -2,11 +2,14 @@ import math
 import numpy
 import quandl
 import datetime
+
+# Maths and Science libraries/modules
 import matplotlib.pyplot
 import pickle
 from matplotlib import style
 from sklearn import preprocessing, model_selection
 from sklearn.linear_model import LinearRegression
+
 
 # Local imports
 import variables as vars
