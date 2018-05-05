@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e9036922-7205-49a7-bca5-39580d0af3fa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/stocks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mathematics" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/stats.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +18,7 @@
       <file leaf-file-name="stocks.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stocks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="-1122">
               <caret line="6" column="13" selection-start-line="6" selection-end-line="7" />
             </state>
           </provider>
@@ -26,8 +27,8 @@
       <file leaf-file-name="stats.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stats.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="412">
+              <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -121,9 +122,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="444" />
-    <option name="y" value="59" />
+    <option name="y" value="80" />
     <option name="width" value="1476" />
-    <option name="height" value="1021" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -278,7 +279,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="444" y="59" width="1476" height="1021" extended-state="0" />
+    <frame x="444" y="80" width="1476" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16395664" />
@@ -286,7 +287,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3909214" side_tool="true" weight="0.33623505" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4993225" weight="0.3297062" />
       <window_info anchor="bottom" id="Python Console" order="8" sideWeight="0.49962714" weight="0.32905984" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5006775" side_tool="true" visible="true" weight="0.32861805" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5006775" side_tool="true" visible="true" weight="0.3363029" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -540,20 +541,20 @@
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/matplotlib/axis.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/mathematics">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/stocks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="-1122">
           <caret line="6" column="13" selection-start-line="6" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mathematics">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/stats.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="412">
+          <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
