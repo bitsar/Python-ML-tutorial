@@ -12,7 +12,6 @@ ys = numpy.array([5,4,6,5,6], dtype=numpy.float64)
 # Calculate regression
 # Calculate mean of xs array and multiple with mean of ys array
 # Devide by the square of xs array
-
 def best_fit_slope_and_intercept(xs, ys):
     gradient = (((mean(xs) * mean(ys)) - mean(xs*ys)) /
                 ((mean(xs)**2) - mean(xs*xs)))
@@ -33,6 +32,11 @@ for x in xs:
 predict_x = 7
 predict_y = (gradient*predict_x) + best_fit
 print(predict_y)
+
+# Calculate error margins
+# Squared error
+def squared_error(ys_original, ys_line):
+    return sum(ys_line - ys_original) * (ys_line - ys_original)
 
 # Graph output
 matplotlib.pyplot.scatter(xs, ys, color='#003F72', label='data')
